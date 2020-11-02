@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{LOG-ID}] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="Console" />
+    </root>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>App.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] [%X{LOG-ID}] %logger{10} [%file:%line] %msg%n </pattern>
+        </encoder>
+    </appender>    
+ 
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+    
+</configuration>
